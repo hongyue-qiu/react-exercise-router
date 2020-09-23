@@ -21,6 +21,7 @@ class App extends Component {
           </header>
           <Switch>
             <Route path="/product/:id" component={Product}/>
+            <Route path="/goods" component={Products}/>
             <Route path="/products" component={Products}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/about" component={About}/>
