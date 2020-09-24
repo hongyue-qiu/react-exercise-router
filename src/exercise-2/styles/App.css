@@ -3,7 +3,7 @@ header{
     height:50px;
     line-height:50px;
     background-color: #cccccc;
-    padding-left:70%;
+    padding-left:55%;
 }
 .home,.about,.profile,.products{
     margin-left: 50px;
@@ -30,4 +30,8 @@ p{
 .website{
     color:red;
     text-decoration:underline;
+}
+.product{
+    margin-left: 50px;
+    margin-top: 50px;
 }

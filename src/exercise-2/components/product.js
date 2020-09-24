@@ -2,22 +2,25 @@ import data from '../mockups/data.json'
 import React, {Component} from 'react';
 
 class Product extends Component{
-    render(){
-        // const product = data[id]
-        console.log(this.props)
-        console.log(this.props.match.params)
+    state = {
+        product:{}
+    }
+    componentDidMount(){
         const productId = this.props.match.params.id;
-        console.log(Object.values(data))
-        const productInfo = Object.values(data).filter(product => product.id === Number(productId))[0];
-        console.log(productInfo);
+        const productInfo = Object.values(data).find(product => product.id === Number(productId));
+        this.setState({
+            product:productInfo
+        })
+    }
 
+    render(){
         return(
             <div className="product">
                 <p>Product Details:</p>
                 {
-                    Object.keys(productInfo).map(key => <p key={key}>{key}: {productInfo[key]}</p>)
+                    Object.keys(this.state.product).map(key => <p key={key}>{key}: {this.state.product[key]}</p>)
                 }
-                <p>URL: /product/{productInfo.id}</p>
+                <p>URL: /product/{this.state.product.id}</p>
             </div>
         );
     }
